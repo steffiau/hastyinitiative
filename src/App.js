@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <AddCharacter store={store}/>
-        {state.characters.map(id => <Character key={id} id={id} character={state.charactersById[id]} /> )}
+        {state.characters.map(id => <Character key={id} id={id} character={state.charactersById[id]} store={store} /> )}
       </div>
     );
   }

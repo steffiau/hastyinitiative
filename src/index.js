@@ -13,15 +13,26 @@ const initialState = {
 function initiativeApp(state = initialState, action) {
     switch (action.type) {
         case "ADD_CHARACTER":
-        return {
-            charactersById: {
-            ...state.charactersById,
-            [action.id]: {name: action.name,}
-            },
-            characters: [...state.characters, action.id]
-        }
+            return {
+                charactersById: {
+                ...state.charactersById,
+                [action.id]: {name: action.name,}
+                },
+                characters: [...state.characters, action.id]
+            }
+        case "ADD_INITIATIVE":
+            return {
+                charactersById: {
+                    ...state.charactersById,
+                    [action.id]: {
+                        ...state.charactersById[action.id],
+                        initiative: action.initiative
+                    }
+                },
+                characters: [...state.characters]
+            }
         default:
-        return state
+            return state
     }
 }
 
