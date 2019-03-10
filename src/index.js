@@ -5,6 +5,15 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+/**
+ * TODO:
+ * Order by initiative
+ * Marker indicate who's turn
+ * Trigger to move marker to next turn
+ * Keyboard shortcuts (enter, N for next turn, B for back to previous turn)
+ *
+ */
+
 const initialState = {
     charactersById: {},
     charactersIdArray: []

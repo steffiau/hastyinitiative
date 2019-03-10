@@ -1,0 +1,101 @@
+.App {
+  text-align: center;
+  font-family: 'Raleway', serif;
+}
+
+.header {
+  background-color: #ecd018;
+  padding: 10px 50px;
+  color: black;
+  left: 0;
+  top: 0;
+}
+
+.title-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.title {
+  font-size: 1em;
+}
+
+.title-icon {
+  height: 1.5em;
+  padding: 0 10px;
+}
+
+.characters-container {
+  font-size: large;
+  /* display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-row-gap: 10px; */
+  max-width: 700px;
+  margin: 45px auto;
+  /* padding: 0 15px 0 50px; */
+}
+
+.character {
+  list-style: none;
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.character-name {
+  flex-basis: 15em;
+  text-align: left;
+}
+
+.character-initiative-input {
+  margin-left: 0.5em;
+}
+
+
+.add-character-wrapper {
+  justify-content: center;
+  border-bottom: #d8d8d8 solid 1px;
+  padding-bottom: 2em;
+}
+
+/* .category-wrapper {
+  display: contents;
+}
+
+.category {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  justify-self: start;
+}
+
+.result {
+  grid-column-start: 2;
+  grid-column-end: 3;
+} */
+
+.input-button-combo {
+  display: flex;
+}
+
+.buttons-container {
+  margin: 55px auto;
+}
+
+.button {
+  padding: 10px 25px;
+  font-size: medium;
+  border: none;
+  color: black;
+  background-color: #ecd018;
+}
+
+.button:not(:first-child) {
+  margin-left: 10px;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #252525;
+  color: #ecd018;
+}
+

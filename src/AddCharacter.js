@@ -4,9 +4,10 @@ let nextCharacterId = 0;
 const AddCharacter = (props) => {
     let input;
     return (
-        <div>
+        <div className="add-character-wrapper input-button-combo">
             <input ref={node => { input = node }} ></input>
-            <button onClick={()=> {
+            {/* TODO: have option to add initiative while creating character? */}
+            <button className="button" onClick={()=> {
                 props.store.dispatch({
                     type: "ADD_CHARACTER",
                     name: input.value,
