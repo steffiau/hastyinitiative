@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 
 const initialState = {
     charactersById: {},
-    characters: []
+    charactersIdArray: []
 }
 
 function initiativeApp(state = initialState, action) {
@@ -16,9 +16,9 @@ function initiativeApp(state = initialState, action) {
             return {
                 charactersById: {
                 ...state.charactersById,
-                [action.id]: {name: action.name,}
+                [action.id]: {name: action.name, id: action.id}
                 },
-                characters: [...state.characters, action.id]
+                charactersIdArray: [...state.charactersIdArray, action.id]
             }
         case "ADD_INITIATIVE":
             return {
@@ -29,7 +29,7 @@ function initiativeApp(state = initialState, action) {
                         initiative: action.initiative
                     }
                 },
-                characters: [...state.characters]
+                charactersIdArray: [...state.charactersIdArray]
             }
         default:
             return state

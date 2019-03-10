@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
 import AddCharacter from './AddCharacter';
-import Character from './Character';
+import { CharacterList } from './CharacterList';
 
 class App extends Component {
+  addInitiative = (input, id) => {
+    this.props.store.dispatch({
+        type: 'ADD_INITIATIVE',
+        initiative: Number(input.value),
+        id: id
+    });
+  }
+
   render() {
-    const {store} = this.props;
-    const state = store.getState();
+    const state = this.props.store.getState();
     return (
       <div className="App">
-        <AddCharacter store={store}/>
-        {state.characters.map(id => <Character key={id} id={id} character={state.charactersById[id]} store={store} /> )}
+        <AddCharacter store={this.props.store}/>
+        <CharacterList characters={state.charactersIdArray.map(id => state.charactersById[id])} addInitiative={this.addInitiative}/>
       </div>
     );
   }

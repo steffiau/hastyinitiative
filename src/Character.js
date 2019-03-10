@@ -1,24 +1,25 @@
 import React from 'react';
 
-const Character = (props) => {
-    const {character, id} = props;
+const Character = ({
+    addInitiative,
+    character,
+    id
+}) => {
     let input;
+    const handleOnClick = () => {
+        addInitiative(input, id);
+        input.value = '';
+    }
+
     return (
-        <div>
+        <li>
             {character.name} (id: {id}, initiative: {character.initiative ? character.initiative : 'not set'})
             <span>
                 <input ref={node => { input = node }}></input>
-                <button onClick={() => {
-                    props.store.dispatch({
-                        type: 'ADD_INITIATIVE',
-                        initiative: Number(input.value),
-                        id
-                    });
-                    input.value = '';
-                }}>Add Initiative</button>
+                <button onClick={handleOnClick}>Add Initiative</button>
             </span>
-        </div>
+        </li>
     )
-}
+};
 
 export default Character;
