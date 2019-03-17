@@ -13,8 +13,22 @@ class App extends Component {
     });
   }
 
+  getCharacters = (charactersIdArray, charactersById) =>
+    charactersIdArray.map(id => charactersById[id]);
+
+  compareInitiative = ({initiative: firstCharInitiative}, {initiative: secondCharInitiative}) => {
+    if (!firstCharInitiative && !secondCharInitiative) { return 0 }
+    if (!firstCharInitiative && secondCharInitiative) { return 1 }
+    if (firstCharInitiative && !secondCharInitiative) { return -1 }
+    return (secondCharInitiative - firstCharInitiative)
+  }
+
+  charactersByInitiative = (charactersIdArray, charactersById) =>
+    this.getCharacters(charactersIdArray, charactersById).sort(this.compareInitiative);
+
   render() {
     const state = this.props.store.getState();
+    const characters = this.charactersByInitiative(state.charactersIdArray, state.charactersById);
     return (
       <div className="App">
         <header className="header">
@@ -25,7 +39,7 @@ class App extends Component {
         </header>
         <div className="characters-container">
           <AddCharacter className="add-character" store={this.props.store}/>
-          <CharacterList className="characters" characters={state.charactersIdArray.map(id => state.charactersById[id])} addInitiative={this.addInitiative}/>
+          <CharacterList className="characters" characters={characters} addInitiative={this.addInitiative}/>
         </div>
       </div>
     );

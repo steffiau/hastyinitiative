@@ -1,14 +1,15 @@
 .App {
   text-align: center;
-  font-family: 'Raleway', serif;
+  font-family: "Roboto Condensed",Roboto,Helvetica,sans-serif;
 }
 
 .header {
-  background-color: #ecd018;
+  background-color: #f2f2f2;
   padding: 10px 50px;
   color: black;
   left: 0;
   top: 0;
+  border-bottom: 1px solid #838383;
 }
 
 .title-container {
@@ -39,7 +40,9 @@
 .character {
   list-style: none;
   display: flex;
-  margin-bottom: 1em;
+  align-items: center;
+  padding: 0.5em;
+  border-bottom: 1px solid #f2f2f2;
 }
 
 .character-name {
@@ -85,8 +88,9 @@
   padding: 10px 25px;
   font-size: medium;
   border: none;
-  color: black;
-  background-color: #ecd018;
+  color: #fff;
+  background-color: #C53131;
+  border-radius: 3px;
 }
 
 .button:not(:first-child) {
@@ -95,7 +99,15 @@
 
 .button:hover {
   cursor: pointer;
-  background-color: #252525;
-  color: #ecd018;
+  background-color: #9c2727;
 }
 
+.secondary-btn {
+  color: #838383;
+  background-color: #f2f2f2;
+}
+
+.secondary-btn:hover {
+  color: #f2f2f2;
+  background-color: #5d5d5d;
+}

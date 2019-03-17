@@ -7,10 +7,12 @@ import * as serviceWorker from './serviceWorker';
 
 /**
  * TODO:
- * Order by initiative
+ * update css to react css modules
  * Marker indicate who's turn
  * Trigger to move marker to next turn
  * Keyboard shortcuts (enter, N for next turn, B for back to previous turn)
+ * Adding character with no name should give validation error?
+ * Add monster field?
  *
  */
 

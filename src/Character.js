@@ -14,11 +14,11 @@ const Character = ({
     return (
         <li className="character">
             <span className="character-name">
-                {character.name} (init: {character.initiative ? character.initiative : ' initiative not set'})
+                {character.name} (init: {character.initiative ? character.initiative : 'not set'})
             </span>
             <div className="input-button-combo">
                 <input className="character-initiative-input" ref={node => { input = node }}></input>
-                <button className="button" onClick={handleOnClick}>Add Initiative</button>
+                <button className="button secondary-btn" onClick={handleOnClick}>Add Initiative</button>
             </div>
         </li>
     )
